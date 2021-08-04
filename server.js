@@ -5,22 +5,31 @@ const socketIO = require('socket.io')
 const cors = require('cors')
 const morgan = require('morgan')
 
-
 const app = express()
-app.use(cors())
-app.use(morgan())
 const server = http.createServer(app)
-const port = 3001
-const io = socketIO(server)
 
+app.use(
+  cors({
+      origin: '*',
+  }))
+app.use(morgan('dev'))
 app.use(express.json())
 
 app.use('/api/rooms/', userRoute)
 
-io.on('connection', () => {
-  console.log('IO Connection')
+const options = {
+  cors: {
+    origin: '*',
+  },
+}
+const io = socketIO(server, options)
+
+io.on('connection', (socket) => {
+  console.log(`IO Connection, ${socket.id}`)
 })
 
+
+const port = 3001
 server.listen(port, () => {
     console.log(`Server has been started on port ${port}`)
 })
