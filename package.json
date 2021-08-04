@@ -1,0 +1,31 @@
+{
+  "name": "nudle-meet-backend",
+  "version": "0.0.1",
+  "description": "SocketIO backend for chat with video",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergey-Rogalskiy/nudle-meet-backend.git"
+  },
+  "keywords": [
+    "nodejs",
+    "socketio",
+    "chat"
+  ],
+  "author": "Sergey Rogalskii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergey-Rogalskiy/nudle-meet-backend/issues"
+  },
+  "homepage": "https://github.com/Sergey-Rogalskiy/nudle-meet-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
