@@ -36,7 +36,7 @@ router.get('/',(req,res) => {
     })
 })
 
-router.post('/login',(req,res) => {
+router.post('/',(req,res) => {
     const check = rooms.find(room => room.owner === req.query.name)
     if (check) {
         return res.send({result: null, reason:"User exists"})
@@ -53,7 +53,7 @@ router.post('/login',(req,res) => {
             ]
         }
         rooms.push(new_room)
-        res.send(new_room)
+        res.send({success: 'Ok', room: new_room})
     }
 })
 
