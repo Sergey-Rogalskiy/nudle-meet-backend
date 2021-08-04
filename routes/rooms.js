@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
+
 const date = new Date(Date.now())
 
 let rooms = [
@@ -29,7 +30,10 @@ let rooms = [
 ]
 
 router.get('/',(req,res) => {
-    res.send({'rooms': rooms})
+    res.send({
+        'success': 'OK',
+        'rooms': rooms
+    })
 })
 
 router.post('/login',(req,res) => {
