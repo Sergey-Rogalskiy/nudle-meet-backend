@@ -19,7 +19,7 @@ const options = {
     origin: '*',
   },
 }
-// const io = socketIO(server, options)
+const io = socketIO(server, options)
 // io.configure(function () { 
 //     io.set("transports", ["xhr-polling"]); 
 //     io.set("polling duration", 10); 
