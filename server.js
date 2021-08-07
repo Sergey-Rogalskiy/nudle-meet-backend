@@ -20,7 +20,9 @@ const options = {
   },
 }
 const io = socketIO(server, options)
-
+io.configure(function () { 
+    io.set("transports", ["xhr-polling"]); 
+    io.set("polling duration", 10); 
 
 const date = new Date(Date.now())
 let rooms = []
